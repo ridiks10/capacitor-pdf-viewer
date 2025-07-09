@@ -1,6 +1,6 @@
 {
   "name": "capacitor-pdf-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Native PDF viewer for Android & iOS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
