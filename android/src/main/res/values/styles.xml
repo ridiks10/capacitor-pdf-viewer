@@ -1,0 +1,7 @@
+<resources>
+    <!-- Кастомний текст для Toolbar -->
+    <style name="ToolbarTitle.Style" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

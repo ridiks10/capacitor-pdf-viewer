@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ► SCRIM під статус-бар (спочатку нульової висоти) -->
+    <View
+        android:id="@+id/status_scrim"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- ► Тулбар без відступів; буде одразу під scrim -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleCentered="true"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/pdf_viewer_ic_arrow_back"
+        app:titleTextAppearance="@style/ToolbarTitle.Style"
+        app:layout_constraintTop_toBottomOf="@id/status_scrim"/>
+
+    <!-- ► PDF-контейнер -->
+    <FrameLayout
+        android:id="@+id/pdf_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Centered ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/pdf_viewer_progress_circle"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+
+        <com.rajat.pdfviewer.PdfRendererView
+            android:id="@+id/pdfView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

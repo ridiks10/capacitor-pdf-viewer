@@ -1,3 +1,3 @@
 export interface PdfViewerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  open(options: { url: string; title?: string, toolbarColor?: string, toolbarTitleColor?: string }): Promise<void>;
 }
